@@ -34,11 +34,11 @@ body {
   font-size: 16px;
   line-height: 18px;
   height: 100%;
-  /* background:url('background.png') #000 no-repeat; */
 }
 
 
 h1 {
+  font-weight: normal;
   background: -webkit-linear-gradient(-45deg, #aee54b, #7796d9);
   background: linear-gradient(-45deg, #aee54b, #7796d9);
   -webkit-background-clip: text;
@@ -49,6 +49,15 @@ h1 {
   letter-spacing: -1px;
   line-height: 1em;
   margin: 0;
+}
+
+/* moz doesn't respect background-clip property so we just turn it off */
+@-moz-document url-prefix() {
+  h1 {
+    background: none;
+    color: #aee54b;
+    font-weight: normal;
+  }
 }
 
 @media (max-width: 600px) {
@@ -66,7 +75,7 @@ p {
   letter-spacing: 0px;
 }
 
-a:link {
+a:link, a:visited {
   text-decoration: none;
   color: #ddd;
   font-weight: bold;
@@ -78,9 +87,11 @@ spacer {
 }
 
 .wrap {
-  /* background: url('background.png') no-repeat; */
+  background: url('bgcity.jpg') center center no-repeat fixed;
+  background-size: cover;
   padding: 1em;
   height: 100%;
+  padding-bottom: 2em;
 }
 
 .blurb {
